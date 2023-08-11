@@ -39,3 +39,24 @@ ggplot(data = starwars, aes(x = height)) + geom_histogram(fill = "blue", color =
 ```{r}
 ggplot(data = starwars, aes(x = height, y = mass)) + geom_point() + theme_minimal()
 ```
+
+## Calculate Summary statistics
+
+use mean() function to find means.
+
+Use sd() function to find standard deviations.
+
+```{r}
+# without "na.rm = TRUE", returns "NA" because there are missing values in this column
+mean_height <- mean(starwars$height, na.rm = TRUE)
+
+mean_height
+```
+
+Find and store the standard deviation of character heights
+
+```{r}
+sd_height <- sd(starwars$height, na.rm = TRUE)
+
+sd_height
+```
